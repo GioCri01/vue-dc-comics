@@ -1,26 +1,11 @@
 <template>
   <div class="banner">
       <div class="container item-container">
-          <div class=" item-banner">
-          <img src="../assets/img/buy-comics-digital-comics.png" alt="">
-          <h2>digital comics</h2>
+          <div v-for="(item,index) in oggBanner" :key="`oggBanner-${index}`" class=" item-banner">
+          <img :src="item.image" alt="">
+          <h2>{{item.name}}</h2>
         </div>
-        <div class=" item-banner">
-          <img src="../assets/img/buy-comics-merchandise.png" alt="">
-          <h2>digital comics</h2>
-        </div>
-        <div class=" item-banner">
-          <img src="../assets/img/buy-comics-shop-locator.png" alt="">
-          <h2>digital comics</h2>
-        </div>
-        <div class=" item-banner">
-          <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-          <h2>digital comics</h2>
-        </div>
-        <div class=" item-banner">
-          <img src="../assets/img/buy-dc-power-visa.svg" alt="">
-          <h2>digital comics</h2>
-        </div>
+        
       </div>
 
       
@@ -28,11 +13,45 @@
 </template>
 
 <script>
+ import imageUno from "../assets/img/buy-comics-digital-comics.png";
+ import imageDue from "../assets/img/buy-comics-merchandise.png";
+ import imageTre from "../assets/img/buy-comics-shop-locator.png";
+ import imageQuattro from "../assets/img/buy-comics-subscriptions.png";
+ import imageCinque from "../assets/img/buy-dc-power-visa.svg";
+ 
 export default {
     name:"BannerComp",
+    data(){
+        return{
+             oggBanner:[
+            {
+                name:"digital comics",
+                image: imageUno
+            },
+            {
+                name:"dc merchandise",
+                image: imageDue
+            },
+            {
+                name:"subscription",
+                image: imageTre
+            },
+            {
+                name:"comic shop locator",
+                image: imageQuattro
+            },
+            {
+                name:"dc power visa",
+                image: imageCinque
+            },
+        ]
+        }
+       
+    }
 
 }
 </script>
+
 
 <style lang="scss" scoped>
 .banner{
