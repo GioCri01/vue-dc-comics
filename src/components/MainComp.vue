@@ -7,11 +7,12 @@
       <div class="container position-relative">
           <span>current series</span>
           <div class="box-container">
-              <div class="box" v-for="(item,index) in DcComics" :key="`item-${index}`">
-              <img :src="item.thumb" :alt="item.series">
-              <p>{{item.series}}</p>
-          </div>
-          </div>
+              <CardComp
+              v-for="(cardItem,index) in DcComics"
+              :key="`card-${index}`"
+              :card="cardItem"
+              />
+            </div>
           
           
           
@@ -25,16 +26,17 @@
 
 <script>
 import DcComics from "../assets/data/DcComics"
+import CardComp from "./CardComp.vue"
+
 
 export default {
-    name:"MainComp",
-    data(){
-       return{
-           DcComics
-       }
+    name: "MainComp",
+    data() {
+        return {
+            DcComics
+        };
     },
-    
-
+    components: { CardComp }
 }
 </script>
 
