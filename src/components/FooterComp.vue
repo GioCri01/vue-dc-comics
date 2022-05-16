@@ -39,6 +39,7 @@
                 <li><a href="#">News</a></li>
                 
             </ul>
+            
 
         </div>
         <div class="credits ">
@@ -74,6 +75,7 @@ export default {
         background-image: url("../assets/img/footer-bg.jpg");
         background-size:cover ;
     }
+   
 
     .footer-section{
         display: flex;
